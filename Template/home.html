@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+  <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="body">
+    {% if current_user %}
+    <div class="head">
+      <div class="header">
+        <div class="name">Travel Hunts.com</div>
+        <div class="home">
+          <button><a class="nav-link active" aria-current="page" href="{% url 'logout' %}">LogOut</a></button>
+        </div>
+      </div>
+      <div style="background-color: #003580; padding: 10px; color: white;">
+        <h4>WELCOME <span style="color: papayawhip;">{{current_user}}</span></h4>
+      </div>
+    </div>
+    <ul class="nav">
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+          class="bi bi-bookmark-heart" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z" />
+          <path
+            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+        </svg><span>Stays</span></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+          class="bi bi-airplane-engines" viewBox="0 0 16 16">
+          <path
+            d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z" />
+        </svg><span>Flight</span></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-heart"
+          viewBox="0 0 16 16">
+          <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982Z" />
+          <path
+            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+        </svg><span>Hotel</span></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-car-front"
+          viewBox="0 0 16 16">
+          <path
+            d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z" />
+          <path
+            d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z" />
+        </svg><span>Car rental</span></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stars"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z" />
+        </svg><span>Attractions</span></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-taxi-front"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.862 5.276 3.906 7.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 5H5.309a.5.5 0 0 0-.447.276ZM4 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-9 0a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
+          <path
+            d="M6 1a1 1 0 0 0-1 1v1h-.181A2.5 2.5 0 0 0 2.52 4.515l-.792 1.848a.807.807 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 9.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413c0-.165-.016-.329-.049-.49l-.335-1.68a1.807 1.807 0 0 0-.964-1.261.807.807 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 3H11V2a1 1 0 0 0-1-1H6ZM4.819 4h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679c.02.097.029.195.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155-1.806 0-4.037-.084-5.592-.155A1.479 1.479 0 0 1 1 10.611v-.413c0-.099.01-.197.03-.294l.335-1.68a.807.807 0 0 1 .43-.563c.383-.19.685-.511.853-.904l.792-1.848A1.5 1.5 0 0 1 4.82 4Z" />
+        </svg><span>Airport taxis</span></li>
+    </ul>
+    <div class="about">
+      <p style="font-size: 50px; color: white;font-weight: bold;margin: 0px ">Find your next stay</p>
+      <p style="font-size: 20px; color: white;">Search deals on hotels, homes, and much more</p>
+    </div>
+    <div class="tab">
+      <div class="tab1">where are you going?</div>
+      <div class="tab2">Check in date -- Check out date</div>
+      <div class="tab3">Room</div>
+      <div class="tab4"><button>Search</button></div>
+    </div>
+  </div>
+
+  <div id="center">
+    <div class="top">
+      <div class="delhi"><span>New Delhi</span> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg></div>
+      <div class="bengalore"><span>Bengalore</span> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg></div>
+    </div>
+    <div class="bottom">
+      <div class="mumbai"><span>Mumbai</span> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg></div>
+      <div class="chennai"><span>Chennai</span> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg></div>
+      <div class="jaipur"><span>Jaipur</span> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg></div>
+    </div>
+  </div>
+  <div class="slider">
+    <img src="{% static 'image/fslide1.jpg' %}" alt="..." id='img' height="500px" width="100%" />
+    <button onclick="pre()" class="pre"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+        fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+        <path
+          d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z" />
+      </svg></button>
+    <button onclick="next()" class="next"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+        fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+        <path
+          d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z" />
+      </svg></button>
+  </div>
+
+  <div class="explore-india">
+    <div class="Explore-title">
+      <h1>Explore India</h1>
+      <p>These popular destinations have a lot to offer</p>
+    </div>
+    <div class="slider-frame">
+      <div class="slider-content">
+
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex1.jpg' %}" alt="Image">
+          <p>Goa</p> <span>5,249 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex2.jpg' %}" alt="Image">
+          <p>Ooty</p><span>470 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex3.jpg' %}" alt="Image">
+          <p>Mumbai</p><span>1,650 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex4.jpg' %}" alt="Image">
+          <p>New Delhi</p><span>2,915 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex5.jpg' %}" alt="Image">
+          <p>Bangalore</p><span>2,042 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex6.jpg' %}" alt="Image">
+          <p>Lonavala</p><span>750 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex7.jpg' %}" alt="Image">
+          <p>Rishikesh</p><span>479 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex8.jpg' %}" alt="Image">
+          <p>North Goa</p><span>3,907 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex9.jpg' %}" alt="Image">
+          <p>Munnar</p><span>511 properties</span>
+        </div>
+        <div class="img-content"><img class="slider-image" src="{% static 'image/ex10.jpg' %}" alt="Image ">
+          <p>Wayanad</p><span>708 properties</span>
+        </div>
+
+      </div>
+
+      <button onclick="previousImage()" class="btn-left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+          fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+        </svg></button>
+
+      <button onclick="nextImage()" class="btn-right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+          class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+          <path
+            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+        </svg></button>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="upfoot">
+      <div class="btn">
+        <button>List your property</button>
+      </div>
+      <hr>
+      <div class="navfoot">
+        <ul>
+          <li>
+            <href>Mobile version</href>
+          </li>
+          <li>
+            <href>Your account</href>
+          </li>
+          <li>
+            <href>Make changes online to your booking</href>
+          </li>
+          <li>
+            <href>Customer service help</href>
+          </li>
+          <li>
+            <href>Became an affiliate</href>
+          </li>
+          <li>
+            <href>Tavel hunt For business</href>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="downfoot">
+      <ul type="none">
+        <div class="flist">
+
+          <li>
+            <href>Countries</href>
+          </li>
+          <li>
+            <href>Region</href>
+          </li>
+          <li>
+            <href>Cities</href>
+          </li>
+          <li>
+            <href>Districts</href>
+          </li>
+          <li>
+            <href>Airport</href>
+          </li>
+          <li>
+            <href>Hotels</href>
+          </li>
+          <li>
+            <href>Place of intrest</href>
+          </li>
+
+        </div>
+        <div class="slist">
+
+          <li>
+            <href>Homes</href>
+          </li>
+          <li>
+            <href>Apartments</href>
+          </li>
+          <li>
+            <href>Resorts</href>
+          </li>
+          <li>
+            <href>Villas</href>
+          </li>
+          <li>
+            <href>Hotels</href>
+          </li>
+          <li>
+            <href>B&Bs</href>
+          </li>
+          <li>
+            <href>Guest houses</href>
+          </li>
+
+        </div>
+        <div class="tlist">
+
+          <li>
+            <href>Unique place to stay </href>
+          </li>
+          <li>
+            <href>All destinations</href>
+          </li>
+          <li>
+            <href>All flight destinations</href>
+          </li>
+          <li>
+            <href>Discover</href>
+          </li>
+          <li>
+            <href>Reviews</href>
+          </li>
+          <li>
+            <href>Discover monthly stays </href>
+          </li>
+          <li>
+            <href>Unpacked: Travel articles</href>
+          </li>
+          <li>
+            <href>Travel Communities</href>
+          </li>
+          <li>
+            <href>Seasonal and holiday deals</href>
+          </li>
+          <li>
+            <href>Traveller Review Awards</href>
+          </li>
+
+        </div>
+        <div class="folist">
+
+          <li>
+            <href>Car rental</href>
+          </li>
+          <li>
+            <href>Flight finder</href>
+          </li>
+          <li>
+            <href>Restaurant reservation</href>
+          </li>
+          <li>
+            <href>Travel hunt for travel agent</href>
+          </li>
+
+        </div>
+        <div class="fvlist">
+
+          <li>
+            <href>About travelhunt.com</href>
+          </li>
+          <li>
+            <href>Custome service help</href>
+          </li>
+          <li>
+            <href>Careers</href>
+          </li>
+          <li>
+            <href>Safety Resource center</href>
+          </li>
+          <li>
+            <href>Investor relations</href>
+          </li>
+          <li>
+            <href>Terms and conditions</href>
+          </li>
+          <li>
+            <href>How we work</href>
+          </li>
+          <li>
+            <href>Privacy & cookie statement</href>
+          </li>
+          <li>
+            <href>MSA statement</href>
+          </li>
+          <li>
+            <href>We price match</href>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+  </div>
+  {% endif %}
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  let arr = ["{% static 'image/fslide1.jpg' %}", "{% static 'image/fslide2.jpg' %}", "{% static 'image/fslide3.jpg' %}", "{% static 'image/fslide4.jpg' %}", "{% static 'image/fslide5.jpg' %}"]
+  let i = 1
+
+  function pre() {
+    document.getElementById('img').src = arr[i]
+    i--;
+    if (i < 0) {
+      i = 4
+    }
+
+  }
+  function next() {
+    document.getElementById('img').src = arr[i]
+    i++;
+    if (i > 4) {
+      i = 0
+    }
+  }
+  setInterval(next, 3000)
+
+  // explore india
+  const sliderContent = document.querySelector('.slider-content');
+  const slideWidth = document.querySelector('.slider-frame').offsetWidth;
+  const imagesCount = sliderContent.children.length;
+  const imagesInView = 6;
+  let currentPosition = 0;
+
+  function slideLeft() {
+    if (currentPosition < 0) {
+      currentPosition += slideWidth / imagesInView;
+      sliderContent.style.transform = `translateX(${currentPosition}px)`;
+    }
+  }
+
+  function slideRight() {
+    if (currentPosition > -(slideWidth * (imagesCount - imagesInView) / imagesInView)) {
+      currentPosition -= slideWidth / imagesInView;
+      sliderContent.style.transform = `translateX(${currentPosition}px)`;
+    }
+  }
+
+  function previousImage() {
+    slideLeft();
+  }
+
+  function nextImage() {
+    slideRight();
+  }
+
+</script>
