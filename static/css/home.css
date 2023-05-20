@@ -280,15 +280,14 @@ hr {
 }
 
 .pre {
-    position: absolute;
-    left: 100px;
-    top: 250%;
+    position: relative;
+    bottom: 250px;
 }
 
 .next {
-    position: absolute;
-    right: 100px;
-    top: 250%;
+    position: relative;
+    bottom: 250px;
+    left: 1030px;
 }
 
 
